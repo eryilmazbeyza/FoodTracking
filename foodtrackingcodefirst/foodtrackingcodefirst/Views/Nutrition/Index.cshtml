@@ -1,0 +1,65 @@
+﻿@model IEnumerable<foodtrackingcodefirst.Models.Nutrition>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Nutrition List</h1>
+<br />
+<br />
+@using (Html.BeginForm("Index", "Nutrition"))
+{
+    @Html.TextBox("x","",new{style="width:400px; margin-left:500px;", placeholder="Please Enter Nutrition Type..."})
+    <input type="Submit" value="Search" style="color:blue; margin-top:5px; margin-left:500px; width:400px;" />
+}
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NutritionType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vitamins)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Minerals)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhisicalActivity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BloodValue)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NutritionType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vitamins)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Minerals)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhisicalActivity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BloodValue)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NutritionID">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.NutritionID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

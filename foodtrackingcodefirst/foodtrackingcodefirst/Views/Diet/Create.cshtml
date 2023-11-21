@@ -1,0 +1,51 @@
+﻿@model foodtrackingcodefirst.Models.Diet
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Diet</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DietType" class="control-label"></label>
+                <input asp-for="DietType" class="form-control" />
+                <span asp-validation-for="DietType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DietStart" class="control-label"></label>
+                <input asp-for="DietStart" class="form-control" />
+                <span asp-validation-for="DietStart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DietEnd" class="control-label"></label>
+                <input asp-for="DietEnd" class="form-control" />
+                <span asp-validation-for="DietEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DietPlan" class="control-label"></label>
+                <input asp-for="DietPlan" class="form-control" />
+                <span asp-validation-for="DietPlan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NutritionID" class="control-label"></label>
+                <input asp-for="NutritionID" class="form-control" />
+                <span asp-validation-for="NutritionID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
